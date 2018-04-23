@@ -1,3 +1,4 @@
+from __future__ import division
 import torch
 import torch.nn as nn
 import torch.nn.init as init
@@ -47,7 +48,7 @@ class Wide_ResNet(nn.Module):
         self.in_planes = 16
 
         assert ((depth-4)%6 ==0), 'Wide-resnet depth should be 6n+4'
-        n = (depth-4)/6
+        n = (depth-4)//6
         k = widen_factor
 
         print('| Wide-Resnet %dx%d' %(depth, k))
